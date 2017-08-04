@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>云API</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <style>
+        .empty{ text-align: center; padding: 120px 0;}
+    </style>
+</head>
+<body>
+    <div class="empty">云API</div>
+    <script type="text/javascript" src="script/api.js"></script>
+    <script type="text/javascript">
+    apiready = function(){
+      var UIScrollPicture = api.require('UIScrollPicture');
+        UIScrollPicture.open({
+            rect: {
+                x: 0,
+                y: 0,
+                w: api.winWidth,
+                h: api.winWidth / 2.5
+            },
+            data: {
+                paths: [
+                    'widget://image/1.jpg',
+                    'widget://image/2.jpg',
+                    'widget://image/3.jpg',
+                    'widget://image/4.jpg'
+                ],
+                captions: ['apicloud', 'apicloud', 'apicloud', 'apicloud']
+            },
+            styles: {
+                caption: {
+                    height: 25,
+                    color: '#E0FFFF',
+                    size: 13,
+                    bgColor: '#696969',
+                    position: 'bottom'
+                },
+                indicator: {
+                    align: 'center',
+                    color: '#FFFFFF',
+                    activeColor: '#DA70D6'
+                }
+            },
+            placeholderImg: 'widget://res/slide1.jpg',
+            contentMode: 'scaleToFill',
+            interval: 3,
+            fixedOn: api.frameName,
+            loop: true,
+            fixed: false
+        }, function(ret, err) {
+            if (ret) {
+
+            } else {
+
+            }
+        });
+        var MNNavigationMenu = api.require('MNNavigationMenu');
+MNNavigationMenu.open({
+    rect: {
+        x: 0,
+        y: 150,
+        w: api.winWidth,
+        h: 44
+    },
+    index: 0,
+    animation: true,
+    styles: {
+        column: 4,
+        bg: '#eee',
+        item: {
+            bg: '#fff',
+            active: '#eee',
+            highlight: '#eee',
+            title: {
+                marginB: 0,
+                size: 10,
+                height: 14,
+                color: '#888',
+                active: '#1296db',
+                highlight: '#1296db',
+                ttf:'Alkatip Basma Tom'
+            },
+            icon: {
+                marginT: 3,
+                width: 30,
+                height: 30,
+                corner: 2
+            }
+        }
+    },
+    items: [{
+        title: '日报',
+        icon: 'widget://image/document.png',
+        active: 'widget://image/document1.png',
+        highlight: 'widget://image/document1.png'
+    }, {
+        title: '测评',
+        icon: 'widget://image/barrage.png',
+        active: 'widget://image/barrage1.png',
+        highlight: 'widget://image/barrage1.png'
+    }, {
+        title: '演讲',
+        icon: 'widget://image/activity.png',
+        active: 'widget://image/activity1.png',
+        highlight: 'widget://image/activity1.png'
+    }, {
+        title: '日常事务',
+        icon: 'widget://image/like.png',
+        active: 'widget://image/like1.png',
+        highlight: 'widget://image/like1.png'
+    }
+  ],
+
+    fixedOn: api.frameName,
+    fixed: false
+}, function(ret, err) {
+    if (ret) {
+        alert(JSON.stringify(ret));
+    } else {
+        alert(JSON.stringify(err));
+    }
+});
+    }
+    </script>
+</body>
+</html>
